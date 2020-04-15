@@ -2,8 +2,6 @@ var GitDigest, chomp, exec, replace;
 
 replace = require('replace');
 
-chomp = require('chomp');
-
 exec = require('child_process').exec;
 
 module.exports = GitDigest = (function() {
@@ -29,7 +27,7 @@ module.exports = GitDigest = (function() {
     replace(digest) {
       return replace({
         regex: /\?DIGEST/g,
-        replacement: '?' + digest.chomp(),
+        replacement: '?' + digest.replace(/(\n|\r)+$/, ''),
         paths: [this.config.paths.public],
         recursive: true,
         silent: true
