@@ -12,8 +12,7 @@
     "test": "node_modules/.bin/mocha test.coffee --watch --compilers coffee:coffee-script/register"
   },
   "dependencies": {
-    "replace": "~0.2.9",
-    "chomp": "0.0.1"
+    "replace": "1.1.5"
   },
   "devDependencies": {
     "coffee-script": "latest",
